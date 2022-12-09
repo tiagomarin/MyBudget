@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
     <main class="container mx-auto mt-28 px-5 flex">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
