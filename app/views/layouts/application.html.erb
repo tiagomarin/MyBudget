@@ -12,14 +12,7 @@
   </head>
 
   <body>
-    <%#= button_to "Logout", destroy_user_session_path, method: :delete %>
-    <main class="container flex h-screen">
-      <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+    <main class="container flex min-h-screen">
       <%= yield %>
     </main>
   </body>

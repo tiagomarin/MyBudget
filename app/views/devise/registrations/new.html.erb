@@ -1,32 +1,51 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name' %>
+<div class="w-full flex flex-col gap-8 justify-center items-center bg-main text-text-light">
+  <div class="text-6xl w-40 text-center">
+    <i class="fa-solid fa-house"></i>
+    <i class="fa-solid fa-plane"></i>
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+    <i class="fa-solid fa-utensils"></i>
   </div>
+  <h1 class="font-bold text-4xl">MyBudget</h1>
 
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
-  </div>
+  <% if notice %>
+    <p class="alert alert-success text-center bg-main text-text-light"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger text-center bg-main text-text-light"><%= alert %></p>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="w-full flex flex-col justify-center items-center gap-5 mb-5">
+      <div class="field">
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class: "text-text-dark" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "text-text-dark" %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "text-text-dark" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "text-text-dark" %>
+      </div>
+    </div>
+
+     <div class="actions w-full py-3 px-5 bg-second font-medium text-center text-lg">
+      <div class="py-3 px-5 border-solid border-2 border-gray-50">
+        <%= f.submit "Sign up" %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
