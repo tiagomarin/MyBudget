@@ -1,15 +1,35 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+<div class="w-full">
+  <div class="flex justify-between items-center">
+    <%= link_to categories_path, class: "fixed p-5 text-lg text-text-light" do %>
+      <i class="fas fa-arrow-left"></i>
     <% end %>
-
-    <%= render @category %>
-
-    <%= link_to 'Edit this category', edit_category_path(@category), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this category', category_path(@category), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to 'Back to categories', categories_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <h1 class="w-screen bg-main text-2xl text-center text-text-light py-5">EXPENSES</h1>
   </div>
+
+  <div class="flex justify-between items-center	bg-white p-5">
+    <p class="my-5 text-2xl">
+      <%= @category.icon %>
+    </p>
+    
+    <p class="my-5 text-xl">
+      <%= @category.name.upcase %>
+    </p>
+
+    <p class="font-bold">
+      <%= number_to_currency(@category.expenses.sum(:amount)) %>
+    </p>
+  </div>
+  
+  <div id="expenses" class="min-w-full bg-slate-100 flex flex-col gap-5 p-5">
+    <%= render @expenses %>
+  </div>
+
+  <div class="p-5 bg-second w-screen">
+    <%= link_to 'NEW', new_category_expense_path(@category, @expense), class: "py-3 px-5 border-solid border-2 border-gray-50 bg-second text-text-light block font-medium text-center" %>
+  </div>
+   
+    <%#= link_to 'Edit', edit_category_path(@category), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%# <div class="inline-block ml-2"> %>
+      <%#= button_to 'Delete', category_path(@category), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <%# </div> %>
 </div>
