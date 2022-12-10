@@ -3,6 +3,5 @@
 
   <%= render "form", expense: @expense %>
 
-  <%= link_to "Show this expense", @expense, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to expenses", expenses_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Back", category_path(@category), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>

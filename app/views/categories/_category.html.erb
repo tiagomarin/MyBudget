@@ -1,17 +1,21 @@
-<div id="<%= dom_id category %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= category.name %>
-  </p>
+<%= link_to category do %>
+  <div id="<%= dom_id category %>" class="flex justify-between items-center	bg-white p-5">
+    <p class="my-5 text-2xl">
+      <%= category.icon %>
+    </p>
+    
+    <p class="my-5">
+      <%= category.name %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Icon:</strong>
-    <%= category.icon %>
-  </p>
+    <p class="font-bold">
+      <%= number_to_currency(category.expenses.sum(:amount)) %>
+    </p>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this category", category, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this category', edit_category_path(category), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+    <%# if action_name != "show" %>
+      <%#= link_to "Show this category", category, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%#= link_to 'Edit this category', edit_category_path(category), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+      <%# <hr class="mt-6"> %>
+    <%# end %>
+  </div>
+<% end %>

@@ -1,14 +1,24 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="w-full bg-slate-100">
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Categories</h1>
-    <%= link_to 'New category', new_category_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="w-screen bg-main text-2xl text-center text-text-light py-5">CATEGORIES</h1>
+    <%= button_to destroy_user_session_path, method: :delete, class: "fixed right-0 top-0 p-5 text-lg text-text-light" do %>
+      <i class="fa-solid fa-right-from-bracket"></i>
+    <% end %>
   </div>
 
-  <div id="categories" class="min-w-full">
+  <% if notice %>
+    <p class="alert alert-success text-center bg-main text-text-light"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger text-center bg-main text-text-light"><%= alert %></p>
+  <% end %>
+
+  <div id="categories" class="w-full h-full flex flex-col gap-5 p-5">
     <%= render @categories %>
+  </div>
+  
+  <div class="fixed bottom-0 p-5 bg-second w-screen">
+    <%= link_to 'NEW', new_category_path, class: "py-3 px-5 border-solid border-2 border-gray-50 bg-second text-text-light block font-medium text-center" %>
   </div>
 </div>

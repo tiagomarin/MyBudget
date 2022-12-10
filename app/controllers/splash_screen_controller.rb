@@ -1,4 +1,5 @@
 class SplashScreenController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :check_signed_in
 
   def index; end
