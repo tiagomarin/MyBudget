@@ -2,14 +2,19 @@ require 'rails_helper'
 
 RSpec.describe 'categories/index', type: :view do
   before(:each) do
+    @user = User.create!(name: 'Test User', email: 'test@test.com', password: '123456')
+    current_user = @user
+    
     assign(:categories, [
              Category.create!(
                name: 'Name',
-               icon: 'Icon'
+               icon: 'Icon',
+               user_id: @user.id
              ),
              Category.create!(
                name: 'Name',
-               icon: 'Icon'
+               icon: 'Icon',
+               user_id: @user.id
              )
            ])
   end
