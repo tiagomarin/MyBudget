@@ -1,0 +1,47 @@
+<div class="w-full flex flex-col gap-8 justify-center items-center bg-main text-text-light">
+  <div class="text-6xl w-40 text-center">
+    <i class="fa-solid fa-house"></i>
+    <i class="fa-solid fa-plane"></i>
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+    <i class="fa-solid fa-utensils"></i>
+  </div>
+  <h1 class="font-bold text-4xl">MyBudget</h1>
+
+  <% if notice %>
+    <p class="alert alert-success text-center bg-main text-text-light"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger text-center bg-main text-text-light"><%= alert %></p>
+  <% end %>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="w-full flex flex-col justify-center items-center gap-5 mb-5">
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-text-dark" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "password", autocomplete: "current-password", class: "text-text-dark" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field flex gap-2 items-center">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="actions w-full py-3 px-5 bg-second font-medium text-center text-lg">
+      <div class="py-3 px-5 border-solid border-2 border-gray-50">
+        <%= f.submit "Log in" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="w-full flex flex-col justify-center items-center gap-3">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

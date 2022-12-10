@@ -1,0 +1,12 @@
+<div class="w-full">
+  <div class="flex justify-between items-center">
+    <%= link_to categories_path, class: "fixed p-5 text-lg text-text-light" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h1 class="w-screen bg-main text-2xl text-center text-text-light py-5">NEW CATEGORY</h1>
+  </div>
+
+  <div class="p-5 mt-20">
+    <%= render "form", category: @category %>
+  </div>
+</div>
