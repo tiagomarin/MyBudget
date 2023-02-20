@@ -11,11 +11,5 @@
     <p class="font-bold">
       <%= number_to_currency(category.expenses.sum(:amount)) %>
     </p>
-
-    <%# if action_name != "show" %>
-      <%#= link_to "Show this category", category, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%#= link_to 'Edit this category', edit_category_path(category), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-      <%# <hr class="mt-6"> %>
-    <%# end %>
   </div>
 <% end %>

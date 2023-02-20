@@ -97,7 +97,7 @@ To get a local copy up and running, follow these steps.
 
 Clone this repo with git. Run the following command in your terminal:
 ```
-git clone https://github.com/tiagomarin/Best-Recepies.git
+git clone https://github.com/tiagomarin/MyBudget.git
 
 ```
 
@@ -160,7 +160,16 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Thanks to my learning partners for their support and advices
+Thanks [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) the [author of the original design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/Gregoire Vella/">Creative Commons Attribution 4.0 International License</a>.
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+</a>
+
+<br>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
