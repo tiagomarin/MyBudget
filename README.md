@@ -79,6 +79,10 @@ Access a live demo through:
 
 <br>
 
+Or watch a video presentation through:
+<br>
+[this link](https://www.loom.com/share/42198050d5d44978aa9550f31b360f73)
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
