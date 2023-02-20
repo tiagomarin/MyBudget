@@ -1,0 +1,40 @@
+<div class="w-full bg-slate-100">
+  <div class="flex justify-between items-center">
+    <%= link_to categories_path, class: "fixed p-5 text-lg text-text-light" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h1 class="w-screen bg-main text-2xl text-center text-text-light py-5">EXPENSES</h1>
+    <%= button_to destroy_user_session_path, method: :delete, class: "fixed right-0 top-0 p-5 text-lg text-text-light" do %>
+      <i class="fa-solid fa-right-from-bracket"></i>
+    <% end %>
+  </div>
+
+  <% if notice %>
+    <p class="alert alert-success text-center bg-main text-text-light"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger text-center bg-main text-text-light"><%= alert %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center	bg-white p-5">
+    <p class="my-5 text-2xl">
+      <%= @category.icon %>
+    </p>
+    
+    <p class="my-5 text-xl">
+      <%= @category.name.upcase %>
+    </p>
+
+    <p class="font-bold">
+      <%= number_to_currency(@category.expenses.sum(:amount)) %>
+    </p>
+  </div>
+  
+  <div id="expenses" class="w-full flex flex-col gap-5 p-5 mb-24">
+    <%= render @expenses %>
+  </div>
+
+  <div class="fixed bottom-0 p-5 bg-second w-screen">
+    <%= link_to 'NEW', new_category_expense_path(@category, @expense), class: "py-3 px-5 border-solid border-2 border-gray-50 bg-second text-text-light block font-medium text-center" %>
+  </div>
+</div>

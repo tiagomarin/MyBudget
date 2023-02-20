@@ -1,0 +1,39 @@
+<%= form_with(model: [@category, @expense], class: "contents") do |form| %>
+  <% if expense.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5 w-full">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5 w-full">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <p class="text-xl">
+    Category
+  </p>
+
+  <p class="text-sm mt-3">
+    select one or more
+  </p>
+
+  <div class="flex flex-wrap gap-5 my-5 items-center justify-center">
+    <%= form.collection_check_boxes(:category_ids, @user.categories.order( 'name ASC' ), :id, :name)%>
+  </div>
+
+  <div class="flex justify-items-center	">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="w-full">
+
+  <div class="flex justify-between items-center">
+    <h1 class="w-screen bg-main text-2xl text-center text-text-light py-5">EXPENSES</h1>
+  </div>
+
+  <div id="expenses" class="min-w-full">
+    <%= render @expenses %>
+  </div>
+  
+  <div class="p-5 bg-second w-screen">
+    <%= link_to 'NEW', new_expense_path, class: "py-3 px-5 border-solid border-2 border-gray-50 bg-second text-text-light block font-medium text-center" %>
+  </div>
+</div>

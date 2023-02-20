@@ -1,0 +1,9 @@
+<div id="<%= dom_id expense %>" class="flex justify-between items-center	bg-white p-5">
+    <p class="my-5">
+      <%= expense.name %>
+    </p>
+
+    <p class="my-5">
+      <%= number_to_currency(expense.amount) %>
+    </p>
+</div>
